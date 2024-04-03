@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<style>
+    .card-container{
+        width: 350px;
+        background-color: bisque;
+        text-align: center;
+        margin: 30px auto;
+        border-radius: 8px;
+        border: solid 2px black;
+    }
+    .p-img{
+        padding: 10px;
+        padding-bottom: 0px;
+        width: 90%;
+
+    }
+    .name{
+        font-size: 20px;
+        padding: 5px 20px 0px 20px;
+        text-align: justify;
+    }
+    .des{
+        text-align: justify;
+        padding: 5px;
+        padding-left: 20px;
+    }
+    .btn{
+        border-radius: 10px;
+        padding: 5px;
+        width: 120px;
+        font-size: 17px;
+    }
+    .btn-con{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+    .min{
+        height: 30px;
+    }
+    .quantity{
+        display: flex;
+        justify-content: center;
+        
+    }
+    .quan{
+        font-size: 30px;
+        position: relative;
+        bottom: 3px;
+        padding: 0px 5px 0px 5px ;
+    }
+</style>
+<body>
+    <div class="card-container">
+        <img src="Goku.jpg" class="p-img">
+        <h1 class="name">INFINITE STUDIO – DRAGON BALL Z: SUPER SAIYAN 3 GOKU [PRE-ORDER]</h1>
+        <p class="des">
+           Height: 68.5 cm<br>
+           Weight: 13.5 kg (prototype)<br> 
+           <h2 id="price">$599</h2> <div class="quantity"><img src="minus.png" class="min" onclick="des()"> <span class="quan" id="quantitytxt">1</span> <img src="add.png" class="min" onclick="inc()"></div>
+            <div class="btn-con">
+            <button class="btn">Add to Cart</button> <button class="btn">Buy Now</button>
+        </div>
+        </p>
+    </div>
+    <script>
+        function inc(){
+            const a = document.getElementById("quantitytxt");
+            const b = parseInt(a.innerText);
+            const c = document.getElementById("price");
+            a.innerText = b + 1;
+            c.innerText = `$${b*599}`;
+            if(b <10){
+                a.innerTextn = ++b;
+            }
+            else{
+                alert("You cant add more than 10 Item");
+            }
+            
+        }
+        function des(){
+            const a = document.getElementById("quantitytxt");
+            const b = parseInt(a.innerText);
+            const c = document.getElementById("price");
+            a.innerText = b - 1;
+            c.innerText = `$${b*599}`;
+            if(b > 1){
+                a.innerTextn = --b;
+            }
+            else{
+                alert("You cant add less than 1 Item");
+            }
+        }
+    </script>
+</body>
+</html>
